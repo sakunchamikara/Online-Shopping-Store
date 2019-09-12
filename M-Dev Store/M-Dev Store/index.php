@@ -122,7 +122,7 @@
     
     <div class="container" id="slider"><!-- container begin -->
 
-        <div class="col-md-12"><!-- col-md-12 begin -->
+        <div class="center"><!-- col-md-12 begin -->
             
             <div class="carousel slide" id="myCarousel" data-ride="carousel"><!-- carousel slide begin -->
 
@@ -139,7 +139,7 @@
 
                     <div class="item active ">
 
-                        <img src="admin_area/slides_images/1.jpg" alt="Slider Image 1">
+                        <img class="center-block" src="admin_area/slides_images/1.jpg" alt="Slider Image 1">
 
                     </div>
                     
@@ -177,6 +177,73 @@
         </div><!-- col-md-12 end -->
 
     </div><!-- container end-->
+
+    <div id="advantages"><!-- advantages end-->
+
+        <div class="container"><!-- container begin -->
+
+            <div class="same-height-row"><!-- same-height-row begin -->
+
+                <div class="col-sm-4"><!-- col-sm-4 begin -->
+
+                    <div class="box same-height"><!-- box same-height begin -->
+
+                        <div class="icon"><!-- icon begin -->
+
+                            <i class="fa fa-heart"></i>
+
+                        </div><!-- icon end -->
+
+                        <h3><a href="#">We love our customer</a></h3>
+
+                        <p>we know to provide thee best servicwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service evere ever</p>
+
+                    </div><!-- box same-height end -->
+
+                </div><!-- col-sm-4 end-->
+
+                <div class="col-sm-4"><!-- col-sm-4 begin -->
+
+                    <div class="box same-height"><!-- box same-height begin -->
+
+                        <div class="icon"><!-- icon begin -->
+
+                            <i class="fa fa-tag"></i>
+
+                        </div><!-- icon end -->
+
+                        <h3><a href="#">Best Prices</a></h3>
+
+                        <p>we know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service we know to provide thee best service everever</p>
+
+                    </div><!-- box same-height end -->
+
+                </div><!-- col-sm-4 end-->
+
+                <div class="col-sm-4"><!-- col-sm-4 begin -->
+
+                    <div class="box same-height"><!-- box same-height begin -->
+
+                        <div class="icon"><!-- icon begin -->
+
+                            <i class="fa fa-thumbs-up"></i>
+
+                        </div><!-- icon end -->
+
+                        <h3><a href="#">100% Original</a></h3>
+
+                        <p>we know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service ever</p>
+
+                    </div><!-- box same-height end -->
+
+                </div><!-- col-sm-4 end-->
+
+            </div><!-- same-height-row end-->
+
+        </div><!-- container end-->
+
+
+    </div><!-- advantages end-->
 
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
