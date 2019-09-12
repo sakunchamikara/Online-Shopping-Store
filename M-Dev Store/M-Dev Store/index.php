@@ -553,7 +553,7 @@
 
                     <a href="details.php">
 
-                        <img class="img-responsive" src="admin_area/product_images/product-3.jpg" alt="Product 1">
+                        <img class="img-responsive" src="admin_area/product_images/product-8.jpg" alt="Product 1">
 
                     </a>
 
