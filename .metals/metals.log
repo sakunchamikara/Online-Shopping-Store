@@ -2,3 +2,5 @@ INFO  time: initialize in 1.03s
 WARN  no build tool detected in workspace 'C:\xampp\htdocs\ecomsite'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 Sep 15, 2019 10:10:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTraceNotification
+INFO  time: initialize in 1.09s
+WARN  no build tool detected in workspace 'C:\xampp\htdocs\ecomsite'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 

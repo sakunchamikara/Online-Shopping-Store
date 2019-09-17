@@ -221,19 +221,19 @@
                         <div class="row nxtImages" id="thumbs"><!-- row begin -->
                             
                             <div class="col-xs-4"><!-- col-xs-4 begin -->
-                                <a href="#" class="thumb"><!-- thumb begin -->
+                                <a data-target="#myCarousel" data-slide-to="0" href="#" class="thumb"><!-- thumb begin -->
                                     <img src="admin_area/product_images/Product-1.jpg" alt="product 1" class="img-responsive">
                                 </a><!--thumb end-->
                             </div><!--col-xs-4 end-->
                             
                             <div class="col-xs-4"><!-- col-xs-4 begin -->
-                                <a href="#" class="thumb"><!-- thumb begin -->
+                                <a data-target="#myCarousel" data-slide-to="1" href="#" class="thumb"><!-- thumb begin -->
                                     <img src="admin_area/product_images/Product-2.jpg" alt="product 1" class="img-responsive">
                                 </a><!--thumb end-->
                             </div><!--col-xs-4 end-->
                             
                             <div class="col-xs-4"><!-- col-xs-4 begin -->
-                                <a href="#" class="thumb"><!-- thumb begin -->
+                                <a data-target="#myCarousel" data-slide-to="2" href="#" class="thumb"><!-- thumb begin -->
                                     <img src="admin_area/product_images/Product-3.jpg" alt="product 1" class="img-responsive">
                                 </a><!--thumb end-->
                             </div><!--col-xs-4 end-->
@@ -313,7 +313,7 @@
                         </div><!--product same-height end-->
                     </div><!--col-md-3 col-sm-6 center-responsive end-->
 
-                </div><!--row same-height-row end-->
+                </div><!--row same-height-row end--> 
 
             </div><!--col-md-9 end-->
 
