@@ -369,6 +369,14 @@ body{
     color: #555555;
     font-weight: 700;
 }
+
+/*forr firefox only*/
+@-moz-document url-prefix(){
+    .form-height-custom{
+        height: auto;
+    }
+}
+
 /*footer styles */
 
 #footer{

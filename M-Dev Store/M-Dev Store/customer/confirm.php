@@ -21,16 +21,16 @@
             <div class="col-md-6"><!--top col-md-6 -->
                 <ul class="menu"><!--top cmenu -->
                     <li>
-                        <a href="customer_register.php">Register</a>
+                        <a href="../customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="customer/my_account.php">My Account</a>
+                        <a href="my_account.php">My Account</a>
                     </li>
                     <li>
-                        <a href="cart.php">Go to cart</a>
+                        <a href="../cart.php">Go to cart</a>
                     </li>
                     <li>
-                        <a href="checkout.php">Login</a>
+                        <a href="../checkout.php">Login</a>
                     </li>
                 </ul><!--end cmenu -->
             </div><!--end col-md-6 -->
@@ -60,19 +60,19 @@
                     <ul class="nav navbar-nav left"><!--nav navbar-nav left begin-->
 
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="../index.php">Home</a>
                         </li>
                         <li>
-                            <a href="shop.php">Shop</a>
+                            <a href="../shop.php">Shop</a>
+                        </li>
+                        <li class="active">
+                            <a href="my_account.php">My Account</a>
                         </li>
                         <li>
-                            <a href="customer/my_account.php">My Account</a>
+                            <a href="../cart.php">Shopping cart</a>
                         </li>
                         <li>
-                            <a href="cart.php">Shopping cart</a>
-                        </li>
-                        <li  class="active">
-                            <a href="contact.php">Contact us</a>
+                            <a href="../contact.php">Contact</a>
                         </li>
 
                     </ul><!--nav navbar-nav left end-->
@@ -121,14 +121,16 @@
     </div><!--navbar navbar-default end-->
     
     <div id="content"><!--content begin-->
+
         <div class="container"><!--container begin-->
+
             <div class="col-md-12"><!--col-md-12 begin-->
 
                 <ul class="breadcrumb"><!--breadcrumb begin-->
                     <li>
                         <a href="index.php">Home</a>
                     </li>
-                    <li>Contact us</li>
+                    <li>My account</li>
                 </ul><!--breadcrumb end-->
 
             </div><!--col-md-12 end-->
@@ -147,67 +149,84 @@
 
                 <div class="box"><!--box begin-->
 
-                    <div class="box-header"><!--boxheader begin-->
+                    <h1 align="center">Please Confirm Your Payment</h1>
 
-                    <center>
-
-                        <h2>Feel free to contact us</h2>
-
-                        <p class="text-muted">
-                            If you have any question s,feel free to contact us our customer service work <strong>24/7</strong>
-                        </p>
-
-                    </center>
-
-                    <form action="contact.php" method="post">
-
+                    <form action="confirm.php" method="post" enctype="multipart/form-data"><!--form begin-->
+                
                         <div class="form-group"><!--form-group begin-->
 
-                            <label>Name</label>
+                            <label> Invoice No: </label>
 
-                            <input type="text" name="name" class="form-control" required>
+                            <input type="text" class="form-control" name="invoice_no" required>
+
+                        </div><!--form-group end-->
+                
+                        <div class="form-group"><!--form-group begin-->
+
+                            <label> Amount Sent: </label>
+
+                            <input type="text" class="form-control" name="amount_sent" required>
+
+                        </div><!--form-group end-->
+                
+                        <div class="form-group"><!--form-group begin-->
+
+                            <label> Select Payment method: </label>
+
+                            <select name="payment_method" class="form-control">
+
+                                <option>Select Payment Mode</option>
+                                <option> B ack Code</option>
+                                <option>UBL / Omini Paisa</option>
+                                <option>Easy Paisa</option>
+                                <option>Western Union</option>
+
+                            </select>
+
+                        </div><!--form-group end-->
+                
+                        <div class="form-group"><!--form-group begin-->
+
+                            <label> Transaction / Reference ID: </label>
+
+                            <input type="text" class="form-control" name="ref_no" required>
+
+                        </div><!--form-group end-->
+                
+                        <div class="form-group"><!--form-group begin-->
+
+                            <label> Omini Paisa / East Paisa: </label>
+
+                            <input type="text" class="form-control" name="code" required>
+
+                        </div><!--form-group end-->
+                
+                        <div class="form-group"><!--form-group begin-->
+
+                            <label> Payment Date: </label>
+
+                            <input type="text" class="form-control" name="date" required>
 
                         </div><!--form-group end-->
 
-                        <div class="form-group"><!--form-group begin-->
+                        <div class="text-center"><!--text-center begin-->
 
-                            <label>Emain</label>
+                            <button class="btn btn-primary btn-lg">
 
-                            <input type="text" name="email" class="form-control" required>
+                                <i class="fa fa-user-md"></i> Confirm Payment
 
-                        </div><!--form-group end-->
-
-                        <div class="form-group"><!--form-group begin-->
-
-                            <label>Subject</label>
-
-                            <input type="text" name="subject" class="form-control" required>
-
-                        </div><!--form-group end-->
-
-                        <div class="form-group"><!--form-group begin-->
-
-                            <label>Message</label>
-
-                            <textarea name="message" class="form-control"></textarea>
-
-                        </div><!--form-group end-->
-
-                        <div class="text-center">
-                            <button type="submit" name="submit" class="btn btn-primary">
-                            <i class="fa fa-user-md"></i> Send Massage
                             </button>
-                        </div>
 
-                    </form>
+                        </div><!--text-center end-->
                     
-                    </div><!--boxheader end-->
+                    </form><!--form end-->
 
                 </div><!--box end-->
 
             </div><!--col-md-9 end-->
 
         </div><!--container end-->
+
     </div><!--content end-->
 
     <?php

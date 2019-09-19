@@ -21,16 +21,16 @@
             <div class="col-md-6"><!--top col-md-6 -->
                 <ul class="menu"><!--top cmenu -->
                     <li>
-                        <a href="customer_register.php">Register</a>
+                        <a href="../customer_register.php">Register</a>
                     </li>
                     <li>
-                        <a href="customer/my_account.php">My Account</a>
+                        <a href="my_account.php">My Account</a>
                     </li>
                     <li>
-                        <a href="cart.php">Go to cart</a>
+                        <a href="../cart.php">Go to cart</a>
                     </li>
                     <li>
-                        <a href="checkout.php">Login</a>
+                        <a href="../checkout.php">Login</a>
                     </li>
                 </ul><!--end cmenu -->
             </div><!--end col-md-6 -->
@@ -60,19 +60,19 @@
                     <ul class="nav navbar-nav left"><!--nav navbar-nav left begin-->
 
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="../index.php">Home</a>
                         </li>
                         <li>
-                            <a href="shop.php">Shop</a>
+                            <a href="../shop.php">Shop</a>
+                        </li>
+                        <li class="active">
+                            <a href="my_account.php">My Account</a>
                         </li>
                         <li>
-                            <a href="customer/my_account.php">My Account</a>
+                            <a href="../cart.php">Shopping cart</a>
                         </li>
                         <li>
-                            <a href="cart.php">Shopping cart</a>
-                        </li>
-                        <li  class="active">
-                            <a href="contact.php">Contact us</a>
+                            <a href="../contact.php">Contact</a>
                         </li>
 
                     </ul><!--nav navbar-nav left end-->
@@ -128,7 +128,7 @@
                     <li>
                         <a href="index.php">Home</a>
                     </li>
-                    <li>Contact us</li>
+                    <li>My account</li>
                 </ul><!--breadcrumb end-->
 
             </div><!--col-md-12 end-->
@@ -147,61 +147,11 @@
 
                 <div class="box"><!--box begin-->
 
-                    <div class="box-header"><!--boxheader begin-->
-
-                    <center>
-
-                        <h2>Feel free to contact us</h2>
-
-                        <p class="text-muted">
-                            If you have any question s,feel free to contact us our customer service work <strong>24/7</strong>
-                        </p>
-
-                    </center>
-
-                    <form action="contact.php" method="post">
-
-                        <div class="form-group"><!--form-group begin-->
-
-                            <label>Name</label>
-
-                            <input type="text" name="name" class="form-control" required>
-
-                        </div><!--form-group end-->
-
-                        <div class="form-group"><!--form-group begin-->
-
-                            <label>Emain</label>
-
-                            <input type="text" name="email" class="form-control" required>
-
-                        </div><!--form-group end-->
-
-                        <div class="form-group"><!--form-group begin-->
-
-                            <label>Subject</label>
-
-                            <input type="text" name="subject" class="form-control" required>
-
-                        </div><!--form-group end-->
-
-                        <div class="form-group"><!--form-group begin-->
-
-                            <label>Message</label>
-
-                            <textarea name="message" class="form-control"></textarea>
-
-                        </div><!--form-group end-->
-
-                        <div class="text-center">
-                            <button type="submit" name="submit" class="btn btn-primary">
-                            <i class="fa fa-user-md"></i> Send Massage
-                            </button>
-                        </div>
-
-                    </form>
-                    
-                    </div><!--boxheader end-->
+                    <?php
+                    if(isset($_GET['my_orders'])){
+                        include("my_orders.php");
+                    }
+                    ?>
 
                 </div><!--box end-->
 
