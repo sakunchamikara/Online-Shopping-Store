@@ -226,9 +226,13 @@
                         </div><!--form-group end-->
 
                         <div class="text-center">
+
                             <button type="submit" name="submit" class="btn btn-primary">
+                                
                             <i class="fa fa-user-md"></i> Register
+
                             </button>
+                            
                         </div>
 
                     </form>

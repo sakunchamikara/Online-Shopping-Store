@@ -40,7 +40,7 @@
     <div id="navbar" class="navbar navbar-default"><!-- navbar navbar-default begin-->
         <div class="container"><!-- container begin-->
             <div class="navbar-header"><!--navbar-header begin-->
-                <a href="index.php" class="navbar-brand home"><!--navbar-brand home begin-->
+                <a href="../index.php" class="navbar-brand home"><!--navbar-brand home begin-->
                     <img src="images/ecom-store-logo.png" alt="M-dev-store-logo" class="hidden-xs">
                     <img src="images/ecom-store-logo-mobile.png" alt="M-dev-store-logo-mobile" class="visible-xs">
                 </a><!--navbar-brand home end-->
@@ -150,6 +150,30 @@
                     <?php
                     if(isset($_GET['my_orders'])){
                         include("my_orders.php");
+                    }
+                    ?>
+
+                    <?php
+                    if(isset($_GET['pay_offline'])){
+                        include("pay_offline.php");
+                    }
+                    ?>
+
+                    <?php
+                    if(isset($_GET['edit_account'])){
+                        include("edit_account.php");
+                    }
+                    ?>
+
+                    <?php
+                    if(isset($_GET['change_pass'])){
+                        include("change_pass.php");
+                    }
+                    ?>
+
+                    <?php
+                    if(isset($_GET['delete_account'])){
+                        include("delete_account.php");
                     }
                     ?>
 

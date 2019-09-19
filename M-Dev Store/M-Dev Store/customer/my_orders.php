@@ -13,7 +13,7 @@
 <hr>
 
 <div class="table-responsive"><!-- table-responsive begin-->
-    <table class="table table-boarded table-hover"><!-- table table-boarded table-hover begin-->
+    <table class="table table-bordered table-hover"><!-- table table-boarded table-hover begin-->
         <thead>
             <tr>
                 <th> ON:</th>

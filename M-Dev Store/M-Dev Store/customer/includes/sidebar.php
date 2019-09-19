@@ -46,7 +46,7 @@
 
             <li>
                 <a href="logout.php">
-                    <i class="fa fa-sigh-out"></i> Log Out
+                    <i class="fa fa-sign-out"></i> Log Out
                 </a>
             </li>
         </ul>
