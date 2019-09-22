@@ -139,7 +139,31 @@ include("includes/db.php");
 
                </ol>
 
-               <div class="carousel-inner"><!-- carousel-inner begin -->
+               <div class="carousel-inner"><!-- carousel-inner begin
+
+                    <div class="item active ">
+
+                        <img class="center-block" src="admin_area/slides_images/1.jpg" alt="Slider Image 1">
+
+                    </div>
+                    
+                    <div class="item">
+
+                        <img src="admin_area/slides_images/2.jpg" alt="Slider Image 2">
+
+                    </div>
+
+                    <div class="item">
+
+                        <img src="admin_area/slides_images/3.jpg" alt="Slider Image 1">
+
+                    </div>
+
+                    <div class="item">
+
+                        <img src="admin_area/slides_images/4.jpg" alt="Slider Image 4">
+
+                    </div> -->
 
                <?php 
 
