@@ -139,7 +139,7 @@ include("includes/db.php");
 
                         <div class="col-md-6">
 
-                            <input type="file" name="product_img2" class="form-control" required>
+                            <input type="file" name="product_img2" class="form-control">
 
                         </div>
 
@@ -151,7 +151,7 @@ include("includes/db.php");
 
                         <div class="col-md-6">
 
-                            <input type="file" name="product_img3" class="form-control" required>
+                            <input type="file" name="product_img3" class="form-control">
 
                         </div>
 

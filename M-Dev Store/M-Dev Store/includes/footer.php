@@ -28,11 +28,33 @@
                 <h4>Top Products Catogories</h4>
 
                 <ul>
-                    <li><a href="#">Jacket</a></li>
-                    <li><a href="#">Accesssories</a></li>
-                    <li><a href="#">Coat</a></li>
-                    <li><a href="#">Shoes</a></li>
-                    <li><a href="#">Tshirts</a></li>
+
+                    <?php
+
+                        $get_p_cats="select * from product_categories";
+
+                        $run_p_cats=mysqli_query($con,$get_p_cats);
+
+                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                            
+                            $p_cat_id=$row_p_cats['p_cat_id'];
+                            $p_cat_title=$row_p_cats['p_cat_title'];
+
+                            echo "
+                            
+                            <li>
+                            
+                                <a href='shop.php?p_cat=$p_cat_id'>
+                                $p_cat_title
+                                </a>
+
+                            </li>
+                            
+                            ";
+                        }
+
+                    ?>
+
                 </ul>
 
                 <hr class="hidden-md hidden-lg">
@@ -66,11 +88,12 @@
                     Subscribe to get latest news from us
                 </p>
 
-                <form action="" method="post">
+                <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=aweber/pMpv', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
                     <div class="input-group">
                         <input type="text" class="form-control" name="email">
                         <span class="input-group-btn">
                             <input type="submit" value="subscribe" class="btn btn-default">
+                            <input type="hidden" value="aweber/pMpv" name="uri"/><input type="hidden" name="loc" value="en_US"/>
                         </span>
                     </div>
                 </form>
