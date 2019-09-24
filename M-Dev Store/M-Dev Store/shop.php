@@ -27,260 +27,100 @@
             </div><!--col-md-3 end-->
 
             <div class="col-md-9"><!--col-md-9 bgin-->
+                <?php
 
-                <div class="box"><!--box begin-->
+                if(!isset($_GET['p_cat'])){
 
-                    <h1>shop</h1>
-                    <p>welcom wewfwrgdgg gwoitgot ggwetjet vod a osaldn9mms eedj9wn arre topi </p>
+                    if(!isset($_GET['cat'])){
 
-                </div><!--box end-->
+                    echo "
 
+                    <div class='box'><!--box begin-->
+
+                        <h1>shop</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt temporibus error deleniti quas quos fugit molestiae incidunt. Voluptate id officia dolore earum delectus fugit facere velit voluptates odio nemo!</p>
+
+                    </div><!--box end-->
+                    
+                    ";
+
+                    }
+                }
+
+                ?>
                 <div class="row"><!--row begin-->
-                    <div class="col-md-4 col-sm-6 center-responsive"><!--col-md-4 col-sm-6 center-responsive begin-->
 
-                        <div class="product"><!-- product begin -->
+                 <?php
+
+                    if(!isset($_GET['p_cat'])){
+
+                        if(!isset($_GET['cat'])){
+                    
+                            $per_page=6;
+
+                            if(isset($_GET['page'])){
+                                $page = $_GET['page'];
+                            }else{
+                                $page=1;
+                            }
+
+                            $start_from = ($page-1) * $per_page;
+
+                            $get_products = "select * from products order by 1 DESC LIMIT $start_from,$per_page";
+
+                            $run_products = mysqli_query($con,$get_products);
+
+                            while ($row_products=mysqli_fetch_array($run_products)) {
+                                $pro_id = $row_products['product_id'];
+                                $pro_title = $row_products['product_title'];
+                                $pro_price = $row_products['product_price'];
+                                $pro_img1 = $row_products['product_img1'];
+
+                                echo"
+                                
+                                <div class='col-md-4 col-sm-6 center-responsive'>
+        
+                                    <div class='product'>
+                                    
+                                        <a href='details.php?pro_id=$pro_id'>
+                                            <img class='img-responsive' src='admin_area/product_images/$pro_img1'>
+                                        </a>
+                           
+                                        <div class='text'>
+                                        
+                                        <h3>
+                                        <a href='details.php?pro_id=$pro_id'>$pro_title</a>
+                                        </h3>
+                        
+                                        <p class='price'>$ $pro_price</p>
+                        
+                                        <p class='button'>
+                                        <a class='btn btn-default' href='details.php?pro_id=$pro_id'>View Details</a> 
+                                        <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
+                                            <i class='fa fa-shopping-cart'></i> Add to Cart
+                                        </a> 
+                                        </p>
+                                        
+                                        </div>
+                        
+                                    </div>
+                    
+                                </div>
+                                ";
+                            }
+
+                        }
+                    }
+
+
+                 ?>
 
-                            <a href="details.php">
-
-                                <img class="img-responsive" src="admin_area/product_images/product-8.jpg" alt="Product 1">
-
-                            </a>
-
-                            <div class="text"><!-- text begin -->
-
-                                <h3>
-
-                                    <a href="details.php">M-dev-store-logo T-shirt</a>
-
-                                </h3>
-
-                                <p class="price">$30</p>
-
-                                <p class="button">
-
-                                    <a href="details.php" class="btn btn-default">Veiw details</a>
-
-                                    <a href="details.php" class="btn btn-primary">
-
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-
-                                    </a>
-
-
-                                </p>
-                            </div><!-- text end-->
- 
-                        </div><!-- product end-->
-
-                    </div><!--col-md-4 col-sm-6 center-responsive begin-->
-                    <div class="col-md-4 col-sm-6 center-responsive"><!--col-md-4 col-sm-6 center-responsive begin-->
-
-                        <div class="product"><!-- product begin -->
-
-                            <a href="details.php">
-
-                                <img class="img-responsive" src="admin_area/product_images/product-1.jpg" alt="Product 1">
-
-                            </a>
-
-                            <div class="text"><!-- text begin -->
-
-                                <h3>
-
-                                    <a href="details.php">M-dev-store-logo T-shirt</a>
-
-                                </h3>
-
-                                <p class="price">$30</p>
-
-                                <p class="button">
-
-                                    <a href="details.php" class="btn btn-default">Veiw details</a>
-
-                                    <a href="details.php" class="btn btn-primary">
-
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-
-                                    </a>
-
-
-                                </p>
-                            </div><!-- text end-->
- 
-                        </div><!-- product end-->
-
-                    </div><!--col-md-4 col-sm-6 center-responsive begin-->
-                    <div class="col-md-4 col-sm-6 center-responsive"><!--col-md-4 col-sm-6 center-responsive begin-->
-
-                        <div class="product"><!-- product begin -->
-
-                            <a href="details.php">
-
-                                <img class="img-responsive" src="admin_area/product_images/product-3.jpg" alt="Product 1">
-
-                            </a>
-
-                            <div class="text"><!-- text begin -->
-
-                                <h3>
-
-                                    <a href="details.php">M-dev-store-logo T-shirt</a>
-
-                                </h3>
-
-                                <p class="price">$30</p>
-
-                                <p class="button">
-
-                                    <a href="details.php" class="btn btn-default">Veiw details</a>
-
-                                    <a href="details.php" class="btn btn-primary">
-
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-
-                                    </a>
-
-
-                                </p>
-                            </div><!-- text end-->
- 
-                        </div><!-- product end-->
-
-                    </div><!--col-md-4 col-sm-6 center-responsive begin-->
-                    <div class="col-md-4 col-sm-6 center-responsive"><!--col-md-4 col-sm-6 center-responsive begin-->
-
-                        <div class="product"><!-- product begin -->
-
-                            <a href="details.php">
-
-                                <img class="img-responsive" src="admin_area/product_images/product-9.jpg" alt="Product 1">
-
-                            </a>
-
-                            <div class="text"><!-- text begin -->
-
-                                <h3>
-
-                                    <a href="details.php">M-dev-store-logo T-shirt</a>
-
-                                </h3>
-
-                                <p class="price">$30</p>
-
-                                <p class="button">
-
-                                    <a href="details.php" class="btn btn-default">Veiw details</a>
-
-                                    <a href="details.php" class="btn btn-primary">
-
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-
-                                    </a>
-
-
-                                </p>
-                            </div><!-- text end-->
- 
-                        </div><!-- product end-->
-
-                    </div><!--col-md-4 col-sm-6 center-responsive begin-->
-                    <div class="col-md-4 col-sm-6 center-responsive"><!--col-md-4 col-sm-6 center-responsive begin-->
-
-                        <div class="product"><!-- product begin -->
-
-                            <a href="details.php">
-
-                                <img class="img-responsive" src="admin_area/product_images/product-4.jpg" alt="Product 1">
-
-                            </a>
-
-                            <div class="text"><!-- text begin -->
-
-                                <h3>
-
-                                    <a href="details.php">M-dev-store-logo T-shirt</a>
-
-                                </h3>
-
-                                <p class="price">$30</p>
-
-                                <p class="button">
-
-                                    <a href="details.php" class="btn btn-default">Veiw details</a>
-
-                                    <a href="details.php" class="btn btn-primary">
-
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-
-                                    </a>
-
-
-                                </p>
-                            </div><!-- text end-->
- 
-                        </div><!-- product end-->
-
-                    </div><!--col-md-4 col-sm-6 center-responsive begin-->
-                    <div class="col-md-4 col-sm-6 center-responsive"><!--col-md-4 col-sm-6 center-responsive begin-->
-
-                        <div class="product"><!-- product begin -->
-
-                            <a href="details.php">
-
-                                <img class="img-responsive" src="admin_area/product_images/product-7.jpg" alt="Product 1">
-
-                            </a>
-
-                            <div class="text"><!-- text begin -->
-
-                                <h3>
-
-                                    <a href="details.php">M-dev-store-logo T-shirt</a>
-
-                                </h3>
-
-                                <p class="price">$30</p>
-
-                                <p class="button">
-
-                                    <a href="details.php" class="btn btn-default">Veiw details</a>
-
-                                    <a href="details.php" class="btn btn-primary">
-
-                                        <i class="fa fa-shopping-cart">
-                                            Add to cart
-                                        </i>
-
-                                    </a>
-
-
-                                </p>
-                            </div><!-- text end-->
- 
-                        </div><!-- product end-->
-
-                    </div><!--col-md-4 col-sm-6 center-responsive begin-->
                 </div><!--row end-->
 
                 <center>
                     <ul class="pagination">
-                        <li><a href="#">First Page</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">Last Page</a></li>
+
+
                     </ul>
                 </center>
 
