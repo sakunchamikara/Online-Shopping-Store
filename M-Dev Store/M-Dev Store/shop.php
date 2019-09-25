@@ -94,7 +94,7 @@
                         
                                         <p class='price'>$ $pro_price</p>
                         
-                                        <p class='button'>
+                                        <p class='buttons'>
                                         <a class='btn btn-default' href='details.php?pro_id=$pro_id'>View Details</a> 
                                         <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
                                             <i class='fa fa-shopping-cart'></i> Add to Cart
@@ -105,25 +105,75 @@
                         
                                     </div>
                     
-                                </div>
+                                </div>  
                                 ";
                             }
+
+                   ?>
+
+                </div><!--row end-->
+
+                <center>
+                    <ul class="pagination"><!-- pagination begin -->
+                    <?php
+                    $query = "select * from products";
+
+                    $result = mysqli_query($con,$query);
+
+                    $total_records = mysqli_num_rows($result);
+
+                    $total_pages = ceil($total_records/$per_page);
+
+                        echo "
+                        
+                        <li>
+                        
+                            <a href='shop.php?page=1'>".'First Page'."</a>
+
+                        </li>
+                        
+                        ";
+
+                        for($i=1;$i<=$total_pages;$i++){
+
+                            echo "
+                        
+                            <li>
+                            
+                                <a href='shop.php?page=".$i."'>".$i."</a>
+    
+                            </li>
+                            
+                            ";
+
+                        }
+                        echo "
+                        
+                        <li>
+                        
+                            <a href='shop.php?page=$total_pages'>".'Last Page'."</a>
+
+                        </li>
+                        
+                        ";
 
                         }
                     }
 
 
-                 ?>
-
-                </div><!--row end-->
-
-                <center>
-                    <ul class="pagination">
-
-
-                    </ul>
+                    ?>
+                    </ul><!-- pagination end -->
                 </center>
 
+
+                <?php 
+                
+                getpcatpro();
+                getcatpro();
+                
+                ?>
+
+                
             </div><!--col-md-9 end-->
 
         </div><!--container end-->
