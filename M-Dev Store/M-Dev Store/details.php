@@ -36,9 +36,13 @@
             <div class="col-md-9"><!--col-md-9 begin-->
 
                 <div id="productMain" class="row"><!--row begin-->
+
                     <div class="col-sm-6"><!--col-sm-6 begin-->
+
                         <div id="mainImage"><!--mainImage begin-->
+
                             <div id="myCarousel" class="carousel slide" data-ride="carousel"><!--carousel slide begin-->
+
                                 <ol class="carousel-indicators"><!--carousel-indicators begin-->
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -46,15 +50,25 @@
                                 </ol><!--carousel-indicators end-->
 
                                 <div class="carousel-inner mainImage">
+
                                     <div class="item active">
+                                        
                                         <img src="admin_area/product_images/<?php echo $pro_img1; ?>" alt="Product 3-a">
+                                    
                                     </div>
+
                                     <div class="item">
+
                                         <img src="admin_area/product_images/<?php echo $pro_img2; ?>" alt="Product 3-b">
+                                    
                                     </div>
+
                                     <div class="item">
+
                                         <img src="admin_area/product_images/<?php echo $pro_img3; ?>" alt="Product 3-c">
+                                    
                                     </div>
+
                                 </div>
 
                                 <a href="#myCarousel" class="left carousel-control" data-slide="prev">
@@ -65,46 +79,60 @@
                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
+
                             </div><!--carousel slide end-->
+
                         </div><!--mainImage end-->
+
                     </div><!--col-sm-6 end-->
 
                     <div class="col-sm-6"><!--col-sm-6 begin-->
+
                         <div class="box"><!--box begin-->
+
                             <h1 class="text-center"><?php echo $pro_title; ?></h1>
 
-                            <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post"><!--form-horizontal begin-->
-                                <div class="form-group"><!--form-group begin-->
-                                    <label for="" class="col-md-5 control-label">product Quantity</label>
+                            <?php add_cart();?>
 
-                                    <div class="col-md-7">
-                                        <select name="product_qty" id="" class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-
-                                </div><!--form-group end-->
-
-                                <div class="form-group"><!--form-group begin-->
-                                    <label for="" class="col-md-5 control-label">Product Size</label>
-
-                                    <div class="col-md-7">
-                                        <select name="product_size" id="" class="form-control">
-                                            <option>Select a size</option>
-                                            <option>Small</option>
-                                            <option>Medium</option>
-                                            <option>Large</option>
-                                        </select>
-                                    </div>
-                                </div>    <!--form-group end-->
-                                <p class="price">$<?php echo $pro_price; ?></p>
-                                <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart">Add to cart</button></p>
-
-                            </form><!--form-horizontal end-->
+                            <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post"><!-- form-horizontal Begin -->
+                               <div class="form-group"><!-- form-group Begin -->
+                                   <label for="" class="col-md-5 control-label">Products Quantity</label>
+                                   
+                                   <div class="col-md-7"><!-- col-md-7 Begin -->
+                                          <select name="product_qty" id="" class="form-control"><!-- select Begin -->
+                                           <option>1</option>
+                                           <option>2</option>
+                                           <option>3</option>
+                                           <option>4</option>
+                                           <option>5</option>
+                                           </select><!-- select Finish -->
+                                   
+                                    </div><!-- col-md-7 Finish -->
+                                   
+                               </div><!-- form-group Finish -->
+                               
+                               <div class="form-group"><!-- form-group Begin -->
+                                   <label class="col-md-5 control-label">Product Size</label>
+                                   
+                                   <div class="col-md-7"><!-- col-md-7 Begin -->
+                                       
+                                       <select name="product_size" class="form-control" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Must pick 1 size for the product')"><!-- form-control Begin -->
+                                          
+                                           <option disabled selected>Select a Size</option>
+                                           <option>Small</option>
+                                           <option>Medium</option>
+                                           <option>Large</option>
+                                           
+                                       </select><!-- form-control Finish -->
+                                       
+                                   </div><!-- col-md-7 Finish -->
+                               </div><!-- form-group Finish -->
+                               
+                               <p class="price">$ <?php echo $pro_price; ?></p>
+                               
+                               <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
+                               
+                           </form><!-- form-horizontal Finish -->
 
                         </div><!--box end-->
 
@@ -129,6 +157,7 @@
                             </div><!--col-xs-4 end-->
 
                         </div><!-- row end -->
+
                     </div><!--col-sm-6 end-->
 
                 </div><!--row end-->
@@ -166,7 +195,7 @@
 
                     <?php 
                    
-                        $get_products = "select * from products order by 1 DESC LIMIT 0,3";
+                        $get_products = "select * from products order by rand() LIMIT 0,3";
                     
                         $run_products = mysqli_query($con,$get_products);
                     
