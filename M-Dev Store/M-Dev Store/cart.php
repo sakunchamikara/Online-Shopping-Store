@@ -23,7 +23,17 @@
                     <form action="cart.php" method="post" enctype="multipart/form-data">
                 
                         <h1>Shopping Cart</h1>
-                        <p class="text-muted">You currnetly have 3 items in your cart</p>
+
+                        <?php
+                        
+                            $ip_add=getRealIpUser();
+                            $select_cart="select * from cart where ip_add='$ip_add'";
+                            $run_cart=mysqli_query($con,$select_cart);
+                            $count=mysqli_num_rows($run_cart);
+                        
+                        ?>
+
+                        <p class="text-muted">You currnetly have <?php echo $count; ?> items in your cart</p>
 
                         <div class="table-reponsive"><!--table-reponsive begin-->
 
@@ -40,110 +50,81 @@
                                 </thead>
 
                                 <tbody>
+
+                                    <?php
+                                    
+                                    $total=0;
+
+                                    while($row_cart=mysqli_fetch_array($run_cart)){
+        
+                                        $pro_id = $row_cart['p_id'];
+                                        
+                                        $pro_size = $row_cart['size'];
+
+                                        $pro_qty = $row_cart['qty'];
+                                        
+                                        $get_products = "select * from products where product_id='$pro_id'";
+                                        
+                                        $run_products = mysqli_query($db,$get_products);
+                                        
+                                        while($row_products=mysqli_fetch_array($run_products)){
+                                            
+                                            $product_title = $row_products['product_title'];
+                                            $product_img1 = $row_products['product_img1'];
+                                            $only_price = $row_products['product_price'];
+                                            $product_title = $row_products['product_title'];
+                                            $sub_total = $row_products['product_price']*$pro_qty;
+                                            $total += $sub_total;
+                            
+                                    
+                                    ?>
                                     <tr>
 
                                         <td>
-                                            <img src="admin_area/product_images/product-2.jpg"  alt="Product 1" class="img-responsive">
+                                            <img src="admin_area/product_images/<?php echo $product_img1;?>"  alt="Product 1" class="img-responsive">
                                         </td>
 
                                         <td>
-                                            <a href="#">M-Dev polo shitt</a>
+                                            <a href="details.php?pro_id=<?php echo $pro_id;?>"><?php echo $product_title?></a>
                                         </td>
 
                                         <td>
-                                            2
+                                            <?php echo $pro_qty?>
                                         </td>
 
                                         <td>
-                                            $50
+                                            <?php echo $only_price?>
                                         </td>
 
                                         <td>
-                                            Large
+                                            <?php echo $pro_size?>
                                         </td>
 
                                         <td>
-                                            <input type="checkbox" name="remove[]">
+                                            <input type="checkbox" name="remove[]" value="<?php echo $pro_id;?>"
                                         </td>
 
                                         <td>
-                                            $100
+                                            <?php echo $sub_total;?>
                                         </td>
                                     </tr>
-                                </tbody>
 
-                                <tbody>
-                                    <tr>
-
-                                        <td>
-                                            <img src="admin_area/product_images/product-2.jpg"  alt="Product 1" class="img-responsive">
-                                        </td>
-
-                                        <td>
-                                            <a href="#">M-Dev polo shitt</a>
-                                        </td>
-
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <td>
-                                            $50
-                                        </td>
-
-                                        <td>
-                                            Large
-                                        </td>
-
-                                        <td>
-                                            <input type="checkbox" name="remove[]">
-                                        </td>
-
-                                        <td>
-                                            $100
-                                        </td>
-                                    </tr>
-                                </tbody>
-
-                                <tbody>
-                                    <tr>
-
-                                        <td>
-                                            <img src="admin_area/product_images/product-2.jpg"  alt="Product 1" class="img-responsive">
-                                        </td>
-
-                                        <td>
-                                            <a href="#">M-Dev polo shitt</a>
-                                        </td>
-
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <td>
-                                            $50
-                                        </td>
-
-                                        <td>
-                                            Large
-                                        </td>
-
-                                        <td>
-                                            <input type="checkbox" name="remove[]">
-                                        </td>
-
-                                        <td>
-                                            $100
-                                        </td>
-                                    </tr>
+                                    <?php }} ?>
+                                    
                                 </tbody>
 
                                 <tfoot>
+
                                     <tr>
+
                                         <th colspan="5" >Total</th>
-                                        <th colspan="2">$100</th>
+
+                                        <th colspan="2"><?php echo $total;?></th>
+
                                     </tr>
+
                                 </tfoot>
+
                             </table>
 
                         </div><!--table-reponsive end-->
@@ -175,6 +156,35 @@
 
                 </div><!--box end-->
 
+                <?php
+                
+                function update_cart(){
+                    
+                    global $con;
+
+                    if(isset($_POST['update'])){
+
+                        foreach($_POST['remove'] as $remove_id){
+
+                            $delete_product = "delete from cart where p_id='$remove_id'";
+
+                            $run_delete = mysqli_query($con,$delete_product);
+
+                            if($run_delete){
+
+                                echo "<script>window.open('cart.php','_self')</script>";
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                echo $up_cart = update_cart();
+
+                ?>                                            
                 <div id="row same-height-row"><!--row same-height-row begin-->
 
                     <div class="col-md-3 col-sm-6"><!--col-md-3 col-sm-6" begin-->
@@ -187,45 +197,38 @@
                         
                     </div><!--col-md-3 col-sm-6" end-->
 
-                    <div class="col-md-3 col-sm-6 center-responsive"><!--col-md-3 col-sm-6 center-responsive begin-->
-                        <div class="product same-height"><!--product same-height begin-->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/Product-3.jpg" alt="Product 6">
-                            </a>
+                    <?php
+                    
+                    $get_products="select * from products order by rand() LIMIT 0,3";
+                    $run_products=mysqli_query($con,$get_products);
 
-                            <div class="text">
-                                <h3><a href="details.php">M dev Tank Top women</a></h3>
-                                <p class="price">$40</p>
-                            </div>
-                        </div><!--product same-height end-->
-                    </div><!--col-md-3 col-sm-6 center-responsive end-->
+                    while ($row_products=mysqli_fetch_array($run_products)) {
+                        
+                        $pro_id = $row_products['product_id'];
+                        $pro_title = $row_products['product_title'];
+                        $pro_price = $row_products['product_price'];
+                        $pro_img1 = $row_products['product_img1'];
 
-                    <div class="col-md-3 col-sm-6 center-responsive"><!--col-md-3 col-sm-6 center-responsive begin-->
-                        <div class="product same-height"><!--product same-height begin-->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/Product-2.jpg" alt="Product 6">
-                            </a>
+                        echo "
+                        
+                        <div class='col-md-3 col-sm-6 center-responsive'><!--col-md-3 col-sm-6 center-responsive begin-->
+                            <div class='product same-height'><!--product same-height begin-->
+                                <a href='details.php?pro_id=$pro_id'>
+                                    <img class='img-responsive' src='admin_area/product_images/$pro_img1' alt='Product 6'>
+                                </a>
 
-                            <div class="text">
-                                <h3><a href="details.php">M dev Tank Top women</a></h3>
-                                <p class="price">$40</p>
-                            </div>
-                        </div><!--product same-height end-->
-                    </div><!--col-md-3 col-sm-6 center-responsive end-->
+                                <div class='text'>
+                                    <h3><a href='details.php?pro_id=$pro_id'>$pro_title</a></h3>
+                                    <p class='price'>$pro_price</p>
+                                </div>
+                            </div><!--product same-height end-->
+                        </div><!--col-md-3 col-sm-6 center-responsive end-->
 
-                    <div class="col-md-3 col-sm-6 center-responsive"><!--col-md-3 col-sm-6 center-responsive begin-->
-                        <div class="product same-height"><!--product same-height begin-->
-                            <a href="details.php">
-                                <img class="img-responsive" src="admin_area/product_images/Product-1.jpg" alt="Product 6">
-                            </a>
+                        ";
 
-                            <div class="text">
-                                <h3><a href="details.php">M dev Tank Top women</a></h3>
-                                <p class="price">$40</p>
-                            </div>
-                        </div><!--product same-height end-->
-                    </div><!--col-md-3 col-sm-6 center-responsive end-->
-
+                    }
+                    
+                    ?>
                 </div><!--row same-height-row end--> 
 
             </div><!--col-md-9 end-->
@@ -244,7 +247,7 @@
                             <tbody>
                                 <tr>
                                     <td>Order Sub Total</td>
-                                    <th>$200</th>
+                                    <th>$<?php echo $total;?></th>
                                 </tr>
                                 <tr>
                                     <td>Shipping and handling</td>
@@ -256,7 +259,7 @@
                                 </tr>
                                 <tr class="total">
                                     <td>Total</td>
-                                    <th>$200</th>
+                                    <th>$<?php echo $total;?></th>
                                 </tr>
                             </tbody>
                         </table>
