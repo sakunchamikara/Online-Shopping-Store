@@ -1,5 +1,6 @@
 <?php
 include("includes/db.php");
+include("functions/functions.php");
 
 ?> 
 <!DOCTYPE html>
@@ -19,8 +20,8 @@ include("includes/db.php");
     <div id="top">
         <div class="container">    <!--top container-->
             <div class="col-md-6 offer"><!--top col-md-6 offer-->
-                <a href="" class="btn btn-success btn-sm">welcom</a>
-                <a href="checkout.php">4 items in your cart | Total price is $300</a>
+                <a href="" class="btn btn-success btn-sm">welcome</a>
+                <a href="checkout.php"><?php items(); ?> items in your cart | Total price is <?php total_price(); ?></a>
             </div><!--end col-md-6 offer-->
             <div class="col-md-6"><!--top col-md-6 -->
                 <ul class="menu"><!--top cmenu -->

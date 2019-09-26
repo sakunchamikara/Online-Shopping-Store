@@ -48,7 +48,7 @@ if (isset($_GET['pro_id'])) {
         <div class="container">    <!--top container-->
             <div class="col-md-6 offer"><!--top col-md-6 offer-->
                 <a href="" class="btn btn-success btn-sm">welcom</a>
-                <a href="checkout.php">4 items in your cart | Total price is $300</a>
+                <a href="checkout.php"><?php items(); ?> items in your cart | Total price is <?php total_price(); ?></a>
             </div><!--end col-md-6 offer-->
             <div class="col-md-6"><!--top col-md-6 -->
                 <ul class="menu"><!--top cmenu -->
@@ -113,7 +113,7 @@ if (isset($_GET['pro_id'])) {
 
                 <a href="cart.php" class="btn btn-primary navbar-btn right"><!--btn navbar-btn primary right begin-->
                     <i class="fa fa-shopping-cart"></i>
-                    <span>4 items in your shopping cart</span>
+                    <span><?php items(); ?> items in your shopping cart</span>
                 </a><!--btn navbar-btn primary right end-->
                 <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right finish-->
                     <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"><!-- btn btn-primary navbar-btn begin-->
