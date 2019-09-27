@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("includes/db.php");
 include("functions/functions.php");
 
@@ -20,7 +21,21 @@ include("functions/functions.php");
     <div id="top">
         <div class="container">    <!--top container-->
             <div class="col-md-6 offer"><!--top col-md-6 offer-->
-                <a href="" class="btn btn-success btn-sm">welcome</a>
+                <a href="" class="btn btn-success btn-sm">
+                <?php 
+                   
+                   if(!isset($_SESSION['customer_email'])){
+                       
+                       echo "Welcome: Guest";
+                       
+                   }else{
+                       
+                       echo "Welcome: " . $_SESSION['customer_email'] . "";
+                       
+                   }
+                   
+                   ?>
+                </a>
                 <a href="checkout.php"><?php items(); ?> items in your cart | Total price is <?php total_price(); ?></a>
             </div><!--end col-md-6 offer-->
             <div class="col-md-6"><!--top col-md-6 -->
@@ -35,7 +50,22 @@ include("functions/functions.php");
                         <a href="../cart.php">Go to cart</a>
                     </li>
                     <li>
-                        <a href="../checkout.php">Login</a>
+                        <a href="../checkout.php">
+                    
+                        <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                       
+                                echo "<a href='checkout.php'> Login </a>";
+
+                               }else{
+
+                                echo " <a href='logout.php'> Log Out </a> ";
+
+                               }
+                           
+                           ?>
+                        </a>
                     </li>
                 </ul><!--end cmenu -->
             </div><!--end col-md-6 -->
