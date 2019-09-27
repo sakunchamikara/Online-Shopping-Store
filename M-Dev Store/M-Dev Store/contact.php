@@ -54,7 +54,7 @@
 
                         <div class="form-group"><!--form-group begin-->
 
-                            <label>Emain</label>
+                            <label>Email</label>
 
                             <input type="text" name="email" class="form-control" required>
 
@@ -83,6 +83,43 @@
                         </div>
 
                     </form>
+
+                    <?php
+                    
+                    if(isset($_POST['submit'])){
+
+                       
+                        ///admin receive msg with this ///
+
+                        $sender_name = $_POST['name'];
+                        $sender_email = $_POST['email'];
+                        $sender_subject = $_POST['subject'];
+                        $sender_message = $_POST['message'];
+                        $receiver_email = "ssakunchamikara@gmail.com";
+
+                        
+
+                        
+                        $headers = "From: $sender_email";
+
+                        mail($receiver_email,$sender_subject,$sender_message,$headers);
+
+                        ///auto reply to sender with this ///
+
+                        $email = $_POST['email'];
+                        $subject = "welcome to my website";
+                        $msg = "thank for sending us message,asap we will replu your mssage";
+                        $from = "ssakunchamikara@gmail.com";
+
+                
+                        $headers = "From: $from";
+
+                        mail($email,$subject,$msg,$headers);
+                        echo "<h2 align='center'>your msg has sent sucesfully</h2>";
+
+                    }
+                    
+                    ?>
                     
                     </div><!--boxheader end-->
 
