@@ -156,7 +156,7 @@ if(isset($_GET['pro_id'])){
 
                 <a href="cart.php" class="btn btn-primary navbar-btn right"><!--btn navbar-btn primary right begin-->
                     <i class="fa fa-shopping-cart"></i>
-                    <span><?php items();?> items in your cart</span>
+                    <span><?php items();?> items in your  cart</span>
                 </a><!--btn navbar-btn primary right end-->
                 <div class="navbar-collapse collapse right"><!-- navbar-collapse collapse right finish-->
                     <button class="btn btn-primary navbar-btn" type="button" data-toggle="collapse" data-target="#search"><!-- btn btn-primary navbar-btn begin-->

@@ -131,7 +131,17 @@ if (isset($_GET['pro_id'])) {
                             <a href="shop.php">Shop</a>
                         </li>
                         <li class="<?php if($active=='Account') echo"active"; ?>">
-                            <a href="customer/my_account.php">My Account</a>
+                            <?php
+                            
+                            if(!isset($_SESSION['customer_email'])){
+
+                                echo "<a href='checkout.php'>My Account</a>";
+                            }else{
+
+                                echo "<a href='customer/my_account.php?my_orders'>My Account</a>";
+                            }
+                            
+                            ?>
                         </li>
                         <li class="<?php if($active=='Cart') echo"active"; ?>">
                             <a href="cart.php">Shopping cart</a>
