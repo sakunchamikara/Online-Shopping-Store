@@ -122,7 +122,7 @@ include("functions/functions.php");
 
                 </div><!--padding-nav end-->
 
-                <a href="cart.php" class="btn btn-primary navbar-btn right"><!--btn navbar-btn primary right begin-->
+                <a href="../cart.php" class="btn btn-primary navbar-btn right"><!--btn navbar-btn primary right begin-->
                     <i class="fa fa-shopping-cart"></i>
                     <span><?php items();?> items in your  cart</span>
                 </a><!--btn navbar-btn primary right end-->
