@@ -184,6 +184,10 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("view_users.php");
                                         }
+                                        if (isset($_GET['user_profile'])) {
+
+                                                include("user_profile.php");
+                                        }
 
                                         ?>
 
