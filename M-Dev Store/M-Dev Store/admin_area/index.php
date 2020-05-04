@@ -180,6 +180,10 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("insert_user.php");
                                         }
+                                        if (isset($_GET['view_users'])) {
+
+                                                include("view_users.php");
+                                        }
 
                                         ?>
 
