@@ -156,6 +156,10 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("view_customers.php");
                                         }
+                                        if (isset($_GET['delete_customer'])) {
+
+                                                include("delete_customer.php");
+                                        }
 
                                         ?>
 
