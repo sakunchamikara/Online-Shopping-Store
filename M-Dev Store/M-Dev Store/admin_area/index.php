@@ -168,6 +168,10 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("delete_order.php");
                                         }
+                                        if (isset($_GET['view_payments'])) {
+
+                                                include("view_payments.php");
+                                        }
 
                                         ?>
 
