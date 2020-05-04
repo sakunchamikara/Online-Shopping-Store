@@ -172,6 +172,10 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("view_payments.php");
                                         }
+                                        if (isset($_GET['delete_payment'])) {
+
+                                                include("delete_payment.php");
+                                        }
 
                                         ?>
 
