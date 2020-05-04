@@ -160,6 +160,14 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("delete_customer.php");
                                         }
+                                        if (isset($_GET['view_orders'])) {
+
+                                                include("view_orders.php");
+                                        }
+                                        if (isset($_GET['delete_order'])) {
+
+                                                include("delete_order.php");
+                                        }
 
                                         ?>
 
