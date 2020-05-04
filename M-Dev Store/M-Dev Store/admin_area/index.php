@@ -188,6 +188,10 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("user_profile.php");
                                         }
+                                        if (isset($_GET['delete_user'])) {
+
+                                                include("delete_user.php");
+                                        }
 
                                         ?>
 
