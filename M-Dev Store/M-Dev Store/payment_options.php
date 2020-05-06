@@ -54,7 +54,7 @@
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
-                                value: "<?php total_price(); ?>"
+                                value: '<?php echo total_price_paypal(); ?>'
                             }
                         }]
                     });

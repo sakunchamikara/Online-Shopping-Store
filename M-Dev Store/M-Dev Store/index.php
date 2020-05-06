@@ -1,216 +1,238 @@
 <?php
-    $active="Home";
-    include("includes/header.php ");
+
+$active = 'Home';
+include("includes/header.php");
+
 ?>
-    
-    <div class="container" id="slider"><!-- container begin -->
 
-        <div class="center"><!-- col-md-12 begin -->
-            
-            <div class="carousel slide" id="myCarousel" data-ride="carousel"><!-- carousel slide begin -->
+<div class="container" id="slider">
+    <!-- container Begin -->
 
-               <ol class="carousel-indicators">
+    <div class="col-md-12">
+        <!-- col-md-12 Begin -->
 
-               <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
-               <li data-target="#myCarousel" data-slide-to="1"></li>
-               <li data-target="#myCarousel" data-slide-to="2"></li>
-               <li data-target="#myCarousel" data-slide-to="3"></li>
+        <div class="carousel slide" id="myCarousel" data-ride="carousel">
+            <!-- carousel slide Begin -->
 
-               </ol>
+            <ol class="carousel-indicators">
+                <!-- carousel-indicators Begin -->
 
-               <div class="carousel-inner"><!-- carousel-inner begin
+                <li class="active" data-target="#myCarousel" data-slide-to="0"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
 
-                    <div class="item active ">
+            </ol><!-- carousel-indicators Finish -->
 
-                        <img class="center-block" src="admin_area/slides_images/1.jpg" alt="Slider Image 1">
+            <div class="carousel-inner">
+                <!-- carousel-inner Begin -->
 
-                    </div>
-                    
-                    <div class="item">
+                <?php
 
-                        <img src="admin_area/slides_images/2.jpg" alt="Slider Image 2">
+                $get_slides = "select * from slider LIMIT 0,1";
 
-                    </div>
+                $run_slides = mysqli_query($con, $get_slides);
 
-                    <div class="item">
+                while ($row_slides = mysqli_fetch_array($run_slides)) {
 
-                        <img src="admin_area/slides_images/3.jpg" alt="Slider Image 1">
-
-                    </div>
-
-                    <div class="item">
-
-                        <img src="admin_area/slides_images/4.jpg" alt="Slider Image 4">
-
-                    </div> -->
-
-               <?php 
-
-               $get_slides = "select * from slider LIMIT 0,1";
-
-               $run_slides = mysqli_query($con,$get_slides);
-
-               while($row_slides=mysqli_fetch_array($run_slides))
-               {
                     $slide_name = $row_slides['slide_name'];
                     $slide_image = $row_slides['slide_image'];
+                    $slide_url = $row_slides['slide_url'];
 
-                    echo"
-                    
-                    <div class='item active'>
-                    
-                    <img src='admin_area/slides_images/$slide_image'>
+                    echo "
+                       
+                       <div class='item active'>
+                       
+                           <a href='$slide_url'>
 
-                    </div>
+                                <img src='admin_area/slides_images/$slide_image'>
 
-                    ";
-               } 
+                           </a>
+                       
+                       </div>
+                       
+                       ";
+                }
 
-               $get_slides = "select * from slider LIMIT 1,3";
+                $get_slides = "select * from slider LIMIT 1,3";
 
-               $run_slides = mysqli_query($con,$get_slides);
+                $run_slides = mysqli_query($con, $get_slides);
 
-               while($row_slides=mysqli_fetch_array($run_slides))
-               {
+                while ($row_slides = mysqli_fetch_array($run_slides)) {
+
                     $slide_name = $row_slides['slide_name'];
                     $slide_image = $row_slides['slide_image'];
+                    $slide_url = $row_slides['slide_url'];
 
-                    echo"
-                    
-                    <div class='item'>
-                    
-                    <img src='admin_area/slides_images/$slide_image'>
+                    echo "
+                       
+                       <div class='item'>
+                       
+                           <a href='$slide_url'>
 
-                    </div>
+                                <img src='admin_area/slides_images/$slide_image'>
 
-                    ";
-               }
-               
-               ?>
+                           </a>
+                       
+                       </div>
+                       
+                       ";
+                }
 
-               </div><!-- carousel-inner end -->
+                ?>
 
-               <a href="#myCarousel" class="left carousel-control" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-               </a>
-               <a href="#myCarousel" class="right carousel-control" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-               </a>
+            </div><!-- carousel-inner Finish -->
 
-            </div><!-- carousel slide end -->
+            <a href="#myCarousel" class="left carousel-control" data-slide="prev">
+                <!-- left carousel-control Begin -->
 
-        </div><!-- col-md-12 end -->
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
 
-    </div><!-- container end-->
+            </a><!-- left carousel-control Finish -->
 
-    <div id="advantages"><!-- advantages end-->
+            <a href="#myCarousel" class="right carousel-control" data-slide="next">
+                <!-- left carousel-control Begin -->
 
-        <div class="container"><!-- container begin -->
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
 
-            <div class="same-height-row"><!-- same-height-row begin -->
+            </a><!-- left carousel-control Finish -->
 
-                <div class="col-sm-4"><!-- col-sm-4 begin -->
+        </div><!-- carousel slide Finish -->
 
-                    <div class="box same-height"><!-- box same-height begin -->
+    </div><!-- col-md-12 Finish -->
 
-                        <div class="icon"><!-- icon begin -->
+</div><!-- container Finish -->
 
-                            <i class="fa fa-heart"></i>
+<div id="advantages">
+    <!-- #advantages Begin -->
 
-                        </div><!-- icon end -->
+    <div class="container">
+        <!-- container Begin -->
 
-                        <h3><a href="#">We love our customer</a></h3>
+        <div class="same-height-row">
+            <!-- same-height-row Begin -->
 
-                        <p>we know to provide thee best servicwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service evere ever</p>
+            <div class="col-sm-4">
+                <!-- col-sm-4 Begin -->
 
-                    </div><!-- box same-height end -->
+                <div class="box same-height">
+                    <!-- box same-height Begin -->
 
-                </div><!-- col-sm-4 end-->
+                    <div class="icon">
+                        <!-- icon Begin -->
 
-                <div class="col-sm-4"><!-- col-sm-4 begin -->
+                        <i class="fa fa-heart"></i>
 
-                    <div class="box same-height"><!-- box same-height begin -->
+                    </div><!-- icon Finish -->
 
-                        <div class="icon"><!-- icon begin -->
+                    <h3><a href="#">Best Offer</a></h3>
 
-                            <i class="fa fa-tag"></i>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 
-                        </div><!-- icon end -->
+                </div><!-- box same-height Finish -->
 
-                        <h3><a href="#">Best Prices</a></h3>
+            </div><!-- col-sm-4 Finish -->
 
-                        <p>we know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service we know to provide thee best service everever</p>
+            <div class="col-sm-4">
+                <!-- col-sm-4 Begin -->
 
-                    </div><!-- box same-height end -->
+                <div class="box same-height">
+                    <!-- box same-height Begin -->
 
-                </div><!-- col-sm-4 end-->
+                    <div class="icon">
+                        <!-- icon Begin -->
 
-                <div class="col-sm-4"><!-- col-sm-4 begin -->
+                        <i class="fa fa-tag"></i>
 
-                    <div class="box same-height"><!-- box same-height begin -->
+                    </div><!-- icon Finish -->
 
-                        <div class="icon"><!-- icon begin -->
+                    <h3><a href="#">Best Prices</a></h3>
 
-                            <i class="fa fa-thumbs-up"></i>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-                        </div><!-- icon end -->
+                </div><!-- box same-height Finish -->
 
-                        <h3><a href="#">100% Original</a></h3>
+            </div><!-- col-sm-4 Finish -->
 
-                        <p>we know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service everwe know to provide thee best service ever</p>
+            <div class="col-sm-4">
+                <!-- col-sm-4 Begin -->
 
-                    </div><!-- box same-height end -->
+                <div class="box same-height">
+                    <!-- box same-height Begin -->
 
-                </div><!-- col-sm-4 end-->
+                    <div class="icon">
+                        <!-- icon Begin -->
 
-            </div><!-- same-height-row end-->
+                        <i class="fa fa-thumbs-up"></i>
 
-        </div><!-- container end-->
+                    </div><!-- icon Finish -->
+
+                    <h3><a href="#">100% Original</a></h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                </div><!-- box same-height Finish -->
+
+            </div><!-- col-sm-4 Finish -->
+
+        </div><!-- same-height-row Finish -->
+
+    </div><!-- container Finish -->
+
+</div><!-- #advantages Finish -->
+
+<div id="hot">
+    <!-- #hot Begin -->
+
+    <div class="box">
+        <!-- box Begin -->
+
+        <div class="container">
+            <!-- container Begin -->
+
+            <div class="col-md-12">
+                <!-- col-md-12 Begin -->
+
+                <h2>
+                    Our Latest Products
+                </h2>
+
+            </div><!-- col-md-12 Finish -->
+
+        </div><!-- container Finish -->
+
+    </div><!-- box Finish -->
+
+</div><!-- #hot Finish -->
+
+<div id="content" class="container">
+    <!-- container Begin -->
+
+    <div class="row">
+        <!-- row Begin -->
+
+        <?php
+
+        getPro();
+
+        ?>
+
+    </div><!-- row Finish -->
+
+</div><!-- container Finish -->
+
+<?php
+
+include("includes/footer.php");
+
+?>
+
+<script src="js/jquery-331.min.js"></script>
+<script src="js/bootstrap-337.min.js"></script>
 
 
-    </div><!-- advantages end-->
-
-    <div id="hot"><!-- hot begin-->
-
-        <div class="box">
-
-            <div class="container">
-
-                <div class="col-md-12">
-
-                    <h2>Our latest product</h2>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div><!-- hot end-->
-
-    <div class="container" id="content"><!-- container begin -->
-
-        <div class="row"><!-- row begin -->
-
-            <?php 
-
-            getPro();
-
-            ?>
-
-        </div><!-- row end-->
-
-    </div><!-- container end-->
-
-    <?php
-
-    include("includes/footer.php");
-
-    ?>
-
-    <script src="js/jquery-331.min.js"></script>
-    <script src="js/bootstrap-337.min.js"></script>
 </body>
+
 </html>
