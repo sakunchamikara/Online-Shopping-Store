@@ -114,68 +114,41 @@ include("includes/header.php");
         <div class="same-height-row">
             <!-- same-height-row Begin -->
 
-            <div class="col-sm-4">
-                <!-- col-sm-4 Begin -->
+            <?php
 
-                <div class="box same-height">
-                    <!-- box same-height Begin -->
+            $get_boxes = "select * from boxes_section";
+            $run_boxes = mysqli_query($con, $get_boxes);
 
-                    <div class="icon">
-                        <!-- icon Begin -->
+            while ($run_boxes_section = mysqli_fetch_array($run_boxes)) {
 
-                        <i class="fa fa-heart"></i>
+                $box_id = $run_boxes_section['box_id'];
+                $box_title = $run_boxes_section['box_title'];
+                $box_desc = $run_boxes_section['box_desc'];
 
-                    </div><!-- icon Finish -->
+            ?>
 
-                    <h3><a href="#">Best Offer</a></h3>
+                <div class="col-sm-4">
+                    <!-- col-sm-4 Begin -->
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                    <div class="box same-height">
+                        <!-- box same-height Begin -->
 
-                </div><!-- box same-height Finish -->
+                        <div class="icon">
+                            <!-- icon Begin -->
 
-            </div><!-- col-sm-4 Finish -->
+                            <i class="fa fa-heart"></i>
 
-            <div class="col-sm-4">
-                <!-- col-sm-4 Begin -->
+                        </div><!-- icon Finish -->
 
-                <div class="box same-height">
-                    <!-- box same-height Begin -->
+                        <h3><a href="#"><?php echo $box_title; ?></a></h3>
 
-                    <div class="icon">
-                        <!-- icon Begin -->
+                        <p> <?php echo $box_desc; ?> </p>
 
-                        <i class="fa fa-tag"></i>
+                    </div><!-- box same-height Finish -->
 
-                    </div><!-- icon Finish -->
+                </div><!-- col-sm-4 Finish -->
 
-                    <h3><a href="#">Best Prices</a></h3>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-                </div><!-- box same-height Finish -->
-
-            </div><!-- col-sm-4 Finish -->
-
-            <div class="col-sm-4">
-                <!-- col-sm-4 Begin -->
-
-                <div class="box same-height">
-                    <!-- box same-height Begin -->
-
-                    <div class="icon">
-                        <!-- icon Begin -->
-
-                        <i class="fa fa-thumbs-up"></i>
-
-                    </div><!-- icon Finish -->
-
-                    <h3><a href="#">100% Original</a></h3>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-                </div><!-- box same-height Finish -->
-
-            </div><!-- col-sm-4 Finish -->
+            <?php    } ?>
 
         </div><!-- same-height-row Finish -->
 
