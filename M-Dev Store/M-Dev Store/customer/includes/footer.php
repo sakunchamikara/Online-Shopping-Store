@@ -1,7 +1,11 @@
-<div id="footer"><!-- footer begin -->
-    <div class="container"><!-- container begin -->
-        <div class="row"><!-- row begin -->
-            <div class="col-sm-6 col-md-3"><!-- col-sm-6 col-md-3 begin -->
+<div id="footer">
+    <!-- footer begin -->
+    <div class="container">
+        <!-- container begin -->
+        <div class="row">
+            <!-- row begin -->
+            <div class="col-sm-6 col-md-3">
+                <!-- col-sm-6 col-md-3 begin -->
 
                 <h4>Pages</h4>
 
@@ -16,35 +20,38 @@
 
                 <ul>
                     <?php
-                                
-                    if(!isset($_SESSION['customer_email'])){
+
+                    if (!isset($_SESSION['customer_email'])) {
 
                         echo "<a href='../checkout.php'>Login</a>";
-                    }else{
+                    } else {
 
                         echo "<a href='my_account.php?my_orders'>My Account</a>";
                     }
-                    
+
                     ?>
                     <li>
                         <?php
-                        if(!isset($_SESSION['customer_email'])){
+                        if (!isset($_SESSION['customer_email'])) {
 
-                        echo "<a href='../checkout.php'>Register</a>";
-                        }else{
+                            echo "<a href='../checkout.php'>Register</a>";
+                        } else {
 
-                        echo "<a href='my_account.php?edit_account'>Edit Account</a>";
+                            echo "<a href='my_account.php?edit_account'>Edit Account</a>";
                         }
 
                         ?>
                     </li>
+                    <li><a href="../terms.php">Terms & Conditions</a></li>
+
                 </ul>
 
                 <hr class="hidden-md hidden-lg hidden-sm">
 
             </div><!-- col-sm-6 col-md-3 end -->
 
-            <div class="com-sm-6 col-md-3"><!-- col-sm-6 col-md-3 begin -->
+            <div class="com-sm-6 col-md-3">
+                <!-- col-sm-6 col-md-3 begin -->
 
                 <h4>Top Products Catogories</h4>
 
@@ -52,16 +59,16 @@
 
                     <?php
 
-                        $get_p_cats="select * from product_categories";
+                    $get_p_cats = "select * from product_categories";
 
-                        $run_p_cats=mysqli_query($con,$get_p_cats);
+                    $run_p_cats = mysqli_query($con, $get_p_cats);
 
-                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
-                            
-                            $p_cat_id=$row_p_cats['p_cat_id'];
-                            $p_cat_title=$row_p_cats['p_cat_title'];
+                    while ($row_p_cats = mysqli_fetch_array($run_p_cats)) {
 
-                            echo "
+                        $p_cat_id = $row_p_cats['p_cat_id'];
+                        $p_cat_title = $row_p_cats['p_cat_title'];
+
+                        echo "
                             
                             <li>
                             
@@ -72,7 +79,7 @@
                             </li>
                             
                             ";
-                        }
+                    }
 
                     ?>
 
@@ -82,7 +89,8 @@
 
             </div><!-- col-sm-6 col-md-3 end -->
 
-            <div class="com-sm-6 col-md-3"><!-- col-sm-6 col-md-3 begin -->
+            <div class="com-sm-6 col-md-3">
+                <!-- col-sm-6 col-md-3 begin -->
 
                 <h4>Find Us:</h4>
 
@@ -96,12 +104,13 @@
                 </p>
 
                 <a href="../contact.php">Check Our Contact Page</a>
-                
+
                 <hr class="hidden-md hidden-lg">
 
             </div><!-- col-sm-6 col-md-3 end -->
-            
-            <div class="com-sm-6 col-md-3"><!-- col-sm-6 col-md-3 begin -->
+
+            <div class="com-sm-6 col-md-3">
+                <!-- col-sm-6 col-md-3 begin -->
 
                 <h4>Get the NEWS</h4>
 
@@ -114,13 +123,13 @@
                         <input type="text" class="form-control" name="email">
                         <span class="input-group-btn">
                             <input type="submit" value="subscribe" class="btn btn-default">
-                            <input type="hidden" value="aweber/pMpv" name="uri"/><input type="hidden" name="loc" value="en_US"/>
+                            <input type="hidden" value="aweber/pMpv" name="uri" /><input type="hidden" name="loc" value="en_US" />
                         </span>
                     </div>
                 </form>
                 <hr>
                 <h4>Keep In Touch</h4>
-    
+
                 <p class="social">
                     <a href="../#" class="fa fa-facebook"></a>
                     <a href="../#" class="fa fa-twitter"></a>
@@ -145,7 +154,7 @@
             </p>
 
         </div>
-        
+
         <div class="col-md-6">
 
             <p class="pull-right">Theme By: <a href="#">Sakun</a></p>
