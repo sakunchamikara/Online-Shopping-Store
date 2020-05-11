@@ -147,6 +147,30 @@ if (!isset($_SESSION['admin_email'])) {
 
                 <li>
                     <!-- li begin -->
+                    <a href="#" data-toggle="collapse" data-target="#manufacturer">
+                        <!-- a href begin -->
+
+                        <i class="fa fa-fw fa-star"></i> manufacturer
+                        <i class="fa fa-fw fa-caret-down"></i>
+
+                    </a><!-- a href finish -->
+
+                    <ul id="manufacturer" class="collapse">
+                        <!-- collapse begin -->
+                        <li>
+                            <!-- li begin -->
+                            <a href="index.php?insert_manufacturer"> Insert manufacturer </a>
+                        </li><!-- li finish -->
+                        <li>
+                            <!-- li begin -->
+                            <a href="index.php?view_manufacturers"> View manufacturer </a>
+                        </li><!-- li finish -->
+                    </ul><!-- collapse finish -->
+
+                </li><!-- li finish -->
+
+                <li>
+                    <!-- li begin -->
                     <a href="#" data-toggle="collapse" data-target="#p_cat">
                         <!-- a href begin -->
 
@@ -243,6 +267,30 @@ if (!isset($_SESSION['admin_email'])) {
 
                 <li>
                     <!-- li begin -->
+                    <a href="#" data-toggle="collapse" data-target="#terms">
+                        <!-- a href begin -->
+
+                        <i class="fa fa-fw fa-table"></i> Terms
+                        <i class="fa fa-fw fa-caret-down"></i>
+
+                    </a><!-- a href finish -->
+
+                    <ul id="terms" class="collapse">
+                        <!-- collapse begin -->
+                        <li>
+                            <!-- li begin -->
+                            <a href="index.php?insert_terms"> Insert Term </a>
+                        </li><!-- li finish -->
+                        <li>
+                            <!-- li begin -->
+                            <a href="index.php?view_terms"> View Terms </a>
+                        </li><!-- li finish -->
+                    </ul><!-- collapse finish -->
+
+                </li><!-- li finish -->
+
+                <li>
+                    <!-- li begin -->
                     <a href="index.php?view_customers">
                         <!-- a href begin -->
                         <i class="fa fa-fw fa-users"></i> View Customers
@@ -262,6 +310,14 @@ if (!isset($_SESSION['admin_email'])) {
                     <a href="index.php?view_payments">
                         <!-- a href begin -->
                         <i class="fa fa-fw fa-money"></i> View Payments
+                    </a><!-- a href finish -->
+                </li><!-- li finish -->
+
+                <li>
+                    <!-- li begin -->
+                    <a href="index.php?edit_css">
+                        <!-- a href begin -->
+                        <i class="fa fa-fw fa-pencil"></i> CSS Editor
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
 
