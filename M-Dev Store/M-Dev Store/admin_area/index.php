@@ -208,6 +208,42 @@ if (!isset($_SESSION['admin_email'])) {
 
                                                 include("user_profile.php");
                                         }
+                                        if (isset($_GET['insert_terms'])) {
+
+                                                include("insert_terms.php");
+                                        }
+                                        if (isset($_GET['view_terms'])) {
+
+                                                include("view_terms.php");
+                                        }
+                                        if (isset($_GET['delete_term'])) {
+
+                                                include("delete_term.php");
+                                        }
+                                        if (isset($_GET['edit_term'])) {
+
+                                                include("edit_term.php");
+                                        }
+                                        if (isset($_GET['edit_css'])) {
+
+                                                include("edit_css.php");
+                                        }
+                                        if (isset($_GET['insert_manufacturer'])) {
+
+                                                include("insert_manufacturer.php");
+                                        }
+                                        if (isset($_GET['view_manufacturers'])) {
+
+                                                include("view_manufacturers.php");
+                                        }
+                                        if (isset($_GET['delete_manufacturer'])) {
+
+                                                include("delete_manufacturer.php");
+                                        }
+                                        if (isset($_GET['edit_manufacturer'])) {
+
+                                                include("edit_manufacturer.php");
+                                        }
 
                                         ?>
 
